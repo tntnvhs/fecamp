@@ -1,0 +1,8 @@
+.container{
+	max-width: 960px;
+	background: silver;
+	} 
+.header>h1{
+
+}
+ /* >는 자식 선택자를 의미함 모든 h1을 선택 후 hedader로 범위를 축소해서 선택하게 됨.*/
