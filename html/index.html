@@ -2,16 +2,18 @@
 <html lang="ko">
      <head>
          <meta charset = "utf-8">
-         <meta name="viewport" content ="width=device-width">
+         <meta name="viewport"content ="width=device-width">
 <!--initial-scale  minimum scale은 축소 최소값 maximum-scale은 확대 최대값 user-scalable은no->확대 축소 불가능-->  
 <!--meta name="viewport" content ="width=device-width, initial-scale=1, minimum-scale=1"-->       
          <title>HTML5</title>
          <link rel ="stylesheet" href="default.css">
-<!--<link href="default.css"은 external을 연결해 줌. rel은 relation 의 약자 default의 파일을 가져다가 쓴다 -->          
-         <style>
-              
-         </style>
+         <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+<!--<link href="default.css"은 external을 연결해 줌. rel은 relation 의 약자 default의 파일을 가져다가 쓴다 -->    
+<!-- script src는 i8이 호환될 수 있게 만들어줌 주의할 점은 프로토콜을 항상 써야 함 프로토콜을 cd에서 삭제한 이유는 
+    https-보안 http-보안x 이지만 https이건 http이건 상관없기 때문에 하지만 http라고 코딩을 해버리면 https에서 작동이 되질 않 -->
      </head>
+
      
      <body>
          <div class="container">
