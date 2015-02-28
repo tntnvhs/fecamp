@@ -135,10 +135,10 @@ figcaption {
 
 .gnb>ul>li>a{
 	background: #444;
-	padding: 
+	
 
 }
-.gnb>ul>li>ul>li{
+.gnb>li>li{
 	/*.gnb li li로 줄일 수 있*/
 	border-top: 1px dotted #444;}
 .gnb>ul>li>ul>li:first-child{
@@ -193,6 +193,8 @@ figcaption {
 		background: linear-gradient(to bottom, #555 0%,#333 50%,#000 500%,#222 100%);
 		padding-left:25px;
 		/*                          아래서 부터 위로  그라데이션 표*/
+		overflow: visible;
+		/*화면에 보이도록 */
 
 	}
 	.gnb>ul>li>ul{
@@ -209,6 +211,32 @@ figcaption {
 	.gnb a{
 	background: none !important;
 }
+	.gnb>ul>.active>a{
+		/*li생략 가능*/
+		background: #fff !important;
+		color: #000;
+		font-weight: 700;
+		margin-top: 4px;
+		line-height: 36px;
+		border-radius: 4px 4px 0 0;
+		
+	}
+	.gnb>ul>li.active>ul{
+		display: block;
+	}
+	.gnb ul ul{
+		position: absolute;
+
+	}
+	.gnb li li{
+		border : 0;
+		display: inline-block;
+	}
+	.gnb li li > a {
+		color:#666;
+		line-height: 40px;
+
+	}
 }
 
  	/*768px와 같거나 그것보다 크면 이 조건이 true 이며 안에 있는 파일이 실행됨 아이패드 세로 사이즈가 768*/
