@@ -7,21 +7,27 @@
 <!--meta name="viewport" content ="width=device-width, initial-scale=1, minimum-scale=1"-->       
          <title>HTML5</title>
          <link rel ="stylesheet" href="default.css">
+         <!--[if lt IE 9]>
          <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
          <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <!-- ie 6,7,8 브라우저만 주석 안에 있는 script를 읽는다 -->
+<!-- i7,8 브라우저와의 호환성을 위해서 -->
 <!--<link href="default.css"은 external을 연결해 줌. rel은 relation 의 약자 default의 파일을 가져다가 쓴다 -->    
 <!-- script src는 i8이 호환될 수 있게 만들어줌 주의할 점은 프로토콜을 항상 써야 함 프로토콜을 cd에서 삭제한 이유는 
     https-보안 http-보안x 이지만 https이건 http이건 상관없기 때문에 하지만 http라고 코딩을 해버리면 https에서 작동이 되질 않 -->
+     
      </head>
 
      
      <body>
          <div class="container">
-         <a href="#main">메뉴건너뛰기 </a>	
+         <a href="#main" class="skip">메뉴건너뛰기 </a>	
          <header class="header">
          	<h1>HTML5</h1>
          	<nav class="gnb">
          	   <h2>메인 메뉴</h2> 
+               <button type="button">메뉴 열기</button>
          	   <ul>
          	   	  <li>
          	   	  <a href="#">메뉴1</a>
@@ -49,14 +55,14 @@
          	   <!-- 장애인들을 위한 메뉴 네이게이션은 section임, 홈페이지 링크 모음임 -->
          	</nav>
        		<form class="search">
-       		   <input type="text" required>
+       		   <input type="search" required>
        		   <input type="submit" value="검색">
        		</form>  		
          	<!-- h1은 title다음으로 검색기능에서 중요함 -->
          </header>
          <div class="body">
          	<main id="main">
-         		#main
+         		main
          	</main>
          	<!-- url주소를 위해서 id를 넣음 ->장애인 때문에->메뉴 건너뛰기라는 칸이 나옴
          	 -->
@@ -82,7 +88,12 @@
          </footer>
          </div>
       <!-- div는 부모 header는 자식 -->
-
+      <script src = https://code.jquery.com/jquery-1.11.2.min.js></script>
+      <script src = "default.js"></script>
+      <!-- 제이쿼리 불러오기 스크립트는 헤드영역과 바디영역에 들어갈 수 있음 
+      헤드에 넣어야 하는 경우는 html본문 읽기 전에 읽어야 하는 것
+      자바스크립트는 왠만하면 body영역 끝에 넣는다. 왜냐하면 위에다 넣으면 자바스크립트를 다 분석해야 해서 느려진다. -->
+      
      
      </body>
 

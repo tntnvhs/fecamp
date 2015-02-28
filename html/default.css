@@ -10,29 +10,269 @@ main,
 figure,
 figcaption {
  	display: block; }
- 	/*All에서만 쓰이는 것*/
-
+ html,
+ body{
+ 	min-height: 100%;
+ }
+ body{
+ 	margin: 0;
+ 	min-width: 320px;
+ }
+ 	/*All에서만 쓰이는 것*/		
+ body,
+ table, 
+ button, 
+ input, 
+ textarea, 
+ select{
+ 	font-size: 14px;
+ }
+ /*table등은 */
+ body{
+ 	 background: -webkit-linear-gradient(#ccc,#fff); 
+ 	 background: -moz-linear-gradient(#ccc,#fff); 
+ 	 background: -ms-linear-gradient(#ccc,#fff); 
+ 	 background: -o-linear-gradient(#ccc,#fff); 
+ 	 background: linear-gradient(#ccc,#fff); 
+ }
+ .header>h1{
+	font-size: 28px;
+	text-shadow:1px 1px 2px #fff}
+ /*header 밑과 h1위에 무엇이 껴 있으면 적용이 안됨*/
  	/*Mobile에서만 쓰이는 것*/
- 	
+.search>[type="search"]{
+	border: 1px solid #ccc;
+	height: 32px;
+	width: 100%;
+	display: block;
+	
+}
+
+.search>[type="submit"]{
+	width:50px;
+	height: 32px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	box-shadow: 0 0 4px #aaa; 
+}
+.search>input{
+	vertical-align: top;
+	border-radius:3px;
+
+}
+/*mobile*/
+.container{
+	margin: 0 10px;
+}
+.skip{
+	display:none;
+}
+.gnb>h2{
+	height: 1px;
+	position: absolute;
+	overflow: hidden;
+	margin: 0;
+}
+
+/*absolute준 z축으로 붕 뜨기 때문에 형제가 그 자리를 체우기 때문에 */
+
+.gnb>button{
+	border:0;
+	background: #666;
+	width:40px;
+	height: 36px;
+	padding: 36px 0 0 0;
+	/*박스의 높이는 heigt값 +padding 값이 안되는 이유는 butoon값이 border이기 때문에 border가 되면 height값과 padding값중 큰 값이 적용됨. content-box는 더해진 값이 됨 */
+	overflow: hidden;
+	border-radius: 3px;
+	position: absolute;
+	cursor: pointer;
+	/*position relative를 한 이유는 */
+	top:15px;
+	right:10px;
+} 	
+.gnb>button:before{
+	/*자식 요소로 첫번째를 선택한다. 시작 지점에 놓는다.*/
+	content: "";
+	position: absolute;
+	top:4px;
+	left:4px;
+	width:32px;
+	height: 4px;
+	border-top:12px double #fff;
+	border-bottom: 12px double #fff;
+	/**/
+
+}
+.gnb ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+}
+.gnb >ul {
+	background: #666;
+	border-radius: 4px;
+	/*border 을 넣은 이유는 이것의 배경도 깎아야 하기 때문*/
+	overflow: hidden;
+	/*삐져나온 부분을 감춘다.*/
+	display: none;
+	/*모바일에서 감추기 위해서 */
+}
+.gnb a{
+	display: block;
+	background: #666;
+	color: #fff;
+	line-height: 32px;
+	text-decoration: none;
+	padding: 0 10px;
+	white-space: nowrap;
+	/*white-space는 줄 바꿈하지 않음 */
+	text-overflow: ellipsis;
+	/*텍스트가 넘칠 때 말줄일 표시하라는 뜻 ellipsis는 inline때 적용되지 않음 그래서 block 속성을 적용해야  */
+	overflow: hidden;
+}
+.gnb>ul>li>a{
+	background: #444;
+}
+.gnb>ul>li>ul>li{
+	/*.gnb li li로 줄일 수 있*/
+	border-top: 1px dotted #444;}
+.gnb>ul>li>ul>li:first-child{
+/*li의 부모(ul) 기준으로 첫번째 자식만 선택함*/
+	border:0;
+}	
+.search {
+	margin: 15px 0;
+	padding: 0 60px 0 0;
+/*4방향으로 하면 위 우 아래 좌 //줄이면 위 아래 좌 우 ->*/
+.search>[type="search"]{
+	width: 100%;
+	display: block;
+}
+.search>[type="submit"]{
+	width: 30%;
+}
+}
  	/*Tablet & Desktop*/
 @media (min-width: 768px){
- 		body{
- 			background: red;
- 		}
+ 		
  	}
 
  	/*768px와 같거나 그것보다 크면 이 조건이 true 이며 안에 있는 파일이 실행됨 아이패드 세로 사이즈가 768*/
  	
  	/*Tablet*/
- 	
+@media (min-width: 768px) and (max-width: 1024px){
+		
+} 	
+
+/*가로 안 두가지 조건을 모두 맞아야 실행이 됨, css코드는 나중에 선언된 css가 우선순위가 높음 그래서 앞서 선원된 css를 덮어버림.*/
  	/*Desktop*/
- 	
+@media (min-width: 1025px){
+	
+} 	
  	/*반응형 웹일때는 layout의 유연하게 반응함.*/
 /*.container{*/
-	max-width: 960px;
-	background: silver;
-	} 
-.header>h1{
+main,
+.lnb,
+.aside{
+	margin-bottom: 15px;
+}
+/*어떤 해상도에도 간격이 벌어지게 돼있*/
+	
+main {
+	background: #fff;
+	box-shadow: 0 0 4px #999;
+	box-shadow: 0 0 4px rgba(0,0,0,0.3);
+	border-radius: 8px;
+	min-height: 300px;
+}
+.lnb{
+	text-shadow: 1px 1px 0 #333;
 
-}*/
+}
+.lnb h2 {
+	background: #666;
+	border-radius: 4px 4px 0 0 ;
+	font-size:14px;
+	color:#fff;
+	padding: 0 10px; 
+	/*0 10px 0 10px 단축 -->왼쪽 오른쪽*/
+	line-height: 32px;
+	/*박스의 높이가 32px*/
+	margin: 0;
+}
+.lnb ul,
+.aside ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	/*list-style은 ul li에서만 적용가 */
+}
+.lnb li{
+	margin: 1px 0;
+
+
+}
+.lnb a{
+	/*모든 a중에 lnb의 부모가 있는가*/
+	/* .lnb>a 는 자식 선택자 .lnb a는 자손선택자*/
+	display: block;
+	/*inline요소였는데 block으로 지정함*/
+	/*선택자는 빨리 쓰면 빨라지고 선택자 우선순위가 낮아짐*/
+	background: #777;
+	padding : 0 10px; 
+	height:32px;
+	/*박스 높이*/
+	line-height: 35px;
+	/*line-hieght는 줄 높이*/
+	text-decoration: none;
+	color: #fff;
+	transition:.2s;
+	/*transition은 hover를 좀 부드럽게 해줌- > 배경색이 바뀌는데 걸리는 시간 ->여러가지 속성들을 1초동안 transition시켜버*/
+	/*transition을 hover 에다 넣지 않고 a에다가 넣는 이유는 마우스가 들어가고 나갈 때 호버가 되기 때문*/
+}
+.lnb li:last-child>a{
+	/*li자식밑에 있는 a의 마지막 라스트 찰드 이렇게 쓰는 이유는 ul의 마지막 자식을 선택하기 위*/
+	border-radius: 0 0 4px 4px;
+}
+.lnb a:hover ,
+.lnb a:focus{
+	background: #555;
+	/*hover는 마우스 올라간 상태를 선택함.*/
+	/*focus는 키보드가 올라간 상태를 선택*/
+}
+.aside {
+	border: 1px solid #ddd;
+	border-radius: 4px;
+
+	/*1px 두께를 가진 border가 설정 됨*/
+	/*border 속성은 color가 설정되어 있지 않으면 text를 상속받아 설정*/
+	padding: 0 10px;
+}
+/*border값과 padding값을 주면 with?값을 정할 때 합쳐진*/
+.aside h2{
+	font-size: 14px;
+	margin: 0;
+	border-bottom: 1px solid #ddd;
+	line-height: 32px;
+}
+.aside ul{
+	padding: 10px 0;
+}
+.aside a{
+	display: block;
+	line-height: 32px;
+}
+.footer{
+	border-top:1px dotted #ccc;
+}
+.footer>p{
+	text-align: center;
+	color: #959595;
+}
+/*min-height는 최소 높이 300px보다 컨텐츠가 늘어나면 박스가 쭉쭉 늘어남 */
+ /*raba는 css3만 적용하기 때문에 i 7,8은 지원하지 않으므로 #999를 raba가 오버로우 할 수 있게 함*/       
+ /* x, y, blur, color */
+ /*투명도 색상 rgba-레드 크린 블루 알파값 -알파값은 투명도 255까지 적을 수 있음 0이면 색상을 넣지 않음->검은색 , 0.3이라는 알파값은 0.3 이라는 투*/
  /* >는 자식 선택자를 의미함 모든 h1을 선택 후 hedader로 범위를 축소해서 선택하게 됨.*/
